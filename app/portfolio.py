@@ -2,7 +2,6 @@ import pandas as pd
 import chromadb
 import uuid
 
-
 class Portfolio:
     def __init__(self, file_path="resource/my_portfolio.csv"):
         self.file_path = file_path

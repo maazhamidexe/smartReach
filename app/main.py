@@ -1,15 +1,14 @@
 import streamlit as st
 from langchain_community.document_loaders import WebBaseLoader
-
 from chains import Chain
 from portfolio import Portfolio
 from utils import clean_text
 
 
 def create_streamlit_app(llm, portfolio, clean_text):
-    st.title("📧 Cold Mail Generator")
-    url_input = st.text_input("Enter a URL:", value="https://jobs.nike.com/job/R-33460")
-    submit_button = st.button("Submit")
+    st.title("📧 smartReach: cold email gen")
+    url_input = st.text_input("Enter a URL:", value="https://jobs.nike.com/job/R-48474?from=job%20search%20funnel")
+    submit_button = st.button("Generate Email")
 
     if submit_button:
         try:
@@ -29,7 +28,7 @@ def create_streamlit_app(llm, portfolio, clean_text):
 if __name__ == "__main__":
     chain = Chain()
     portfolio = Portfolio()
-    st.set_page_config(layout="wide", page_title="Cold Email Generator", page_icon="📧")
+    st.set_page_config(layout="wide", page_title="smartReach", page_icon="📧")
     create_streamlit_app(chain, portfolio, clean_text)
 
 
